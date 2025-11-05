@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
-import { Memo } from '@/types/memo'
+import { Database } from '@/types/database'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
@@ -10,6 +10,6 @@ if (!supabaseUrl || !supabaseAnonKey) {
 
 // Server-side Supabase client
 export const createServerClient = () => {
-  return createClient<{ memos: Memo }>(supabaseUrl, supabaseAnonKey)
+  return createClient<Database>(supabaseUrl, supabaseAnonKey)
 }
 
